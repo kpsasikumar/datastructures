@@ -5,63 +5,63 @@
 
 struct node
 {
- int data;
- struct node *next;
+   int data;
+   struct node *next;
 };
 struct node *head;
 
 void beg_insert()
 {
- struct node *ptr;
- int item;
- ptr = (struct node *) malloc(sizeof(struct node *));
- if(ptr == NULL)
- {
- printf("\n OVERFLOW \n");
- }
- else
- {
- printf("\n Enter value: ");
- scanf("%d",&item);
- ptr->data = item;
- ptr->next = head;
- head = ptr;
- printf("\n Node inserted \n");
+   struct node *ptr;
+   int item;
+   ptr = (struct node *) malloc(sizeof(struct node *));
+   if(ptr == NULL)
+   {
+     printf("\n OVERFLOW \n");
+   }
+   else
+   {
+       printf("\n Enter value: ");
+       scanf("%d",&item);
+       ptr->data = item;
+       ptr->next = head;
+       head = ptr;
+       printf("\n Node inserted \n");
  }
 }
 
 void last_insert()
 {
- struct node *ptr,*temp;
- int item;
- ptr = (struct node*)malloc(sizeof(struct node));
- if(ptr == NULL)
- {
- printf("\n OVERFLOW");
- }
- else
- {
- printf("\n Enter value: ");
- scanf("%d",&item);
- ptr->data = item;
- if(head == NULL)
- {
- ptr -> next = NULL;
- head = ptr;
- printf("\n Node inserted \n");
- }
- else
- {
- temp = head;
- while (temp -> next != NULL)
- {
- temp = temp -> next;
- }
- temp->next = ptr;
- ptr->next = NULL;
- printf("\n Node inserted");
- }
- }
+   struct node *ptr,*temp;
+   int item;
+   ptr = (struct node*)malloc(sizeof(struct node));
+   if(ptr == NULL)
+   {
+       printf("\n OVERFLOW");
+   }
+    else
+   {
+       printf("\n Enter value: ");
+       scanf("%d",&item);
+       ptr->data = item;
+       if(head == NULL)
+       {
+           ptr -> next = NULL;
+           head = ptr;
+           printf("\n Node inserted \n");
+       }
+       else
+       {
+           temp = head;
+           while (temp -> next != NULL)
+           {
+               temp = temp -> next;
+           }
+           temp->next = ptr;
+           ptr->next = NULL;
+           printf("\n Node inserted");
+       }
+    }
 }
 
 void begin_delete()
@@ -69,14 +69,14 @@ void begin_delete()
  struct node *ptr;
  if(head == NULL)
  {
- printf("\n List is empty \n");
+   printf("\n List is empty \n");
  }
  else
  {
- ptr = head;
- head = ptr->next;
- free(ptr);
- printf("\n Node deleted from the beginning ...\n");
+     ptr = head;
+     head = ptr->next;
+     free(ptr);
+     printf("\n Node deleted from the beginning ...\n");
  }
 }
 
@@ -85,25 +85,25 @@ void last_delete()
  struct node *ptr,*ptr1;
  if(head == NULL)
  {
- printf("\n list is empty");
+     printf("\n list is empty");
  }
  else if(head -> next == NULL)
  {
- head = NULL;
- free(head);
- printf("\n Only node of the list deleted ...\n");
+     head = NULL;
+     free(head);
+     printf("\n Only node of the list deleted ...\n");
  }
  else
  {
  ptr = head;
  while(ptr->next != NULL)
  {
- ptr1 = ptr;
- ptr = ptr ->next;
+     ptr1 = ptr;
+     ptr = ptr ->next;
  }
- ptr1->next = NULL;
- free(ptr);
- printf("\n Deleted Node from the last ...\n");
+     ptr1->next = NULL;
+     free(ptr);
+     printf("\n Deleted Node from the last ...\n");
  }
 }
 
@@ -137,12 +137,12 @@ void main()
  scanf("%d",&ch);
  switch(ch)
  {
- case 1: beg_insert(); display();break;
- case 2: last_insert(); display();break;
- case 3: begin_delete(); display();break;
- case 4: last_delete(); display();break;
- case 5: exit(0);
- default: printf("\n Enter valid choice..");
+   case 1: beg_insert(); display();break;
+   case 2: last_insert(); display();break;
+   case 3: begin_delete(); display();break;
+   case 4: last_delete(); display();break;
+   case 5: exit(0);
+   default: printf("\n Enter valid choice..");
  }
  }
 }
