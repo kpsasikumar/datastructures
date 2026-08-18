@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <math.h>
 #define SIZE 40
 
 char postfix[SIZE];
@@ -57,7 +58,7 @@ void main()
 		{
 			push(ch-'0');
 		}
-		else if(ch == '+' || ch == '-' || ch == '*' || ch == '/'|| ch == '%')
+		else if(ch == '+' || ch == '-' || ch == '*' || ch == '/'|| ch == '%' || ch == '^')
 		{
 			b = pop();
 			a = pop();
@@ -65,9 +66,11 @@ void main()
 			{
 				case '+': result = a + b;	break;
 				case '-': result = a - b;	break;
-				case '*': result = a * b;   break;
+				case '*': result = a * b; break;
 				case '/': result = a / b;	break;
 				case '%': result = a % b;	break;
+				case '^': result = pow(a,b);break;
+				
 			}
 			push(result);
 		}
@@ -76,3 +79,10 @@ void main()
 	pEval = pop();
 	printf("\n The postfix evaluation is: %d\n",pEval);
 }
+
+/*  OUTPUT
+
+    Enter a postfix expression: 12+3-21+3^-
+
+    The postfix evaluation is: -27
+*/
