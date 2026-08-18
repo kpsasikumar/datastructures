@@ -57,7 +57,7 @@ void main()
 		{
 			push(ch-'0');
 		}
-		else if(ch == '+' || ch == '-' || ch == '*' || ch == '/')
+		else if(ch == '+' || ch == '-' || ch == '*' || ch == '/'|| ch == '%')
 		{
 			b = pop();
 			a = pop();
