@@ -1,0 +1,12 @@
+name: Run C Program
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Compile and Run
+        run: |
+          gcc Ex. No. 2(a) stack_reverse_string.c -o program
+          ./program
